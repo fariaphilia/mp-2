@@ -9,7 +9,7 @@ const AllCharsDiv=styled.div`
     
 `;
 
-const SingleCharDiv=styled.div`
+const SingleCharDiv=styled.div<{category: string}>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,8 @@ const SingleCharDiv=styled.div`
     text-align: center;
     align-items: stretch;
     //background-color: lavender;
-    background-color: ${(props)=>(props.category === "smileys and people" ? 'lavender' : 'white')};
+    background-color: ${(props) =>
+            props.category === "smileys and people" ? 'lavender' : 'white'};
     font-family: Garamond, "Times New Roman", serif;
 `;
 
