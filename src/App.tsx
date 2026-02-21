@@ -15,6 +15,9 @@ export default function App(){
     // useState Hook to store Data.
     const [data, setData] = useState<Emoji[]>([]);
 
+    // //search feature, referenced from discussion
+    // const [search, setEmojiSearch] = useState("");
+
     // useEffect Hook for error handling and re-rendering.
     useEffect(() => {
         async function fetchData(): Promise<void> {
@@ -27,8 +30,16 @@ export default function App(){
             .catch((e: Error) => console.log("There was the error: " + e));
     }, []);
 
+
     return(
         <ParentDiv>
+            {/*<input*/}
+            {/*    type="text"*/}
+            {/*    placeholder="enter emoji keyword (lowercase)"*/}
+            {/*    value={search}*/}
+            {/*    onChange={(e) => setEmojiSearch(e.target.value)}*/}
+            
+            {/*/>*/}
             <EmojiHub data={data}/>
         </ParentDiv>
     )
